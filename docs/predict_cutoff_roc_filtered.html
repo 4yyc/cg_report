@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.2 單因子預測力&amp;切點分析(排除飲食紀律不佳) | Cofit x Genensis 醫療大數據 (分析報告)</title>
+  <meta name="description" content="3.2 單因子預測力&amp;切點分析(排除飲食紀律不佳) | Cofit x Genensis 醫療大數據 (分析報告)" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.2 單因子預測力&amp;切點分析(排除飲食紀律不佳) | Cofit x Genensis 醫療大數據 (分析報告)" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.2 單因子預測力&amp;切點分析(排除飲食紀律不佳) | Cofit x Genensis 醫療大數據 (分析報告)" />
+  
+  
+  
+
+<meta name="author" content="By BigData Team" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="predict_cutoff_roc.html"/>
+<link rel="next" href="publication1.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.27/datatables.js"></script>
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
+<link href="libs/dt-ext-buttons-1.12.1/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="libs/dt-ext-buttons-1.12.1/js/dataTables.buttons.min.js"></script>
+<script src="libs/dt-ext-buttons-1.12.1/js/buttons.html5.min.js"></script>
+<script src="libs/dt-ext-buttons-1.12.1/js/buttons.colVis.min.js"></script>
+<script src="libs/dt-ext-buttons-1.12.1/js/buttons.print.min.js"></script>
+<link href="libs/dt-ext-fixedcolumns-1.12.1/css/fixedColumns.dataTables.min.css" rel="stylesheet" />
+<script src="libs/dt-ext-fixedcolumns-1.12.1/js/dataTables.fixedColumns.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DSC50GVDJ7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-DSC50GVDJ7');
+</script>
+
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Highlight</a></li>
+<li class="chapter" data-level="1" data-path="減重成效---單次療程.html"><a href="減重成效---單次療程.html"><i class="fa fa-check"></i><b>1</b> 減重成效 - (單次療程)</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="vens_grap_ob.html"><a href="vens_grap_ob.html"><i class="fa fa-check"></i><b>1.1</b> 資料集(Datasets)</a></li>
+<li class="chapter" data-level="1.2" data-path="porfile_ob.html"><a href="porfile_ob.html"><i class="fa fa-check"></i><b>1.2</b> 客戶輪廓分析</a></li>
+<li class="chapter" data-level="1.3" data-path="global_result_ob.html"><a href="global_result_ob.html"><i class="fa fa-check"></i><b>1.3</b> 整體成效分析</a></li>
+<li class="chapter" data-level="1.4" data-path="cor_ob.html"><a href="cor_ob.html"><i class="fa fa-check"></i><b>1.4</b> 相關分析(Correlation Analysis)</a>
+<ul>
+<li class="chapter" data-level="" data-path="cor_ob.html"><a href="cor_ob.html#cor_ob_var_specific"><i class="fa fa-check"></i>特定變數</a></li>
+<li class="chapter" data-level="" data-path="cor_ob.html"><a href="cor_ob.html#cor_ob_var_all"><i class="fa fa-check"></i>全變數</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="strat_1_ob.html"><a href="strat_1_ob.html"><i class="fa fa-check"></i><b>1.5</b> 分層分析-1: 減重成效</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#baseline_ob"><i class="fa fa-check"></i>初始狀態(Baseline)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#baseline_ob_inbody"><i class="fa fa-check"></i>Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#baseline_ob_wepa"><i class="fa fa-check"></i>相位角</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#baseline_ob_water"><i class="fa fa-check"></i>體水份</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#baseline_ob_inbody_part"><i class="fa fa-check"></i>inbody - 部位別</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#baseline_ob_water_part"><i class="fa fa-check"></i>體水份 - 部位別</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#baseline_ob_gi"><i class="fa fa-check"></i>Glucose/Insulin</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#baseline_ob_lipid"><i class="fa fa-check"></i>Lipid</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#baseline_ob_kidney"><i class="fa fa-check"></i>Kidney</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#baseline_ob_hormone"><i class="fa fa-check"></i>Hormone</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#baseline_ob_hematology"><i class="fa fa-check"></i>Hematology</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#endpoint_ob"><i class="fa fa-check"></i>介入後狀態(Endpoint)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#endpoint_ob_inbody"><i class="fa fa-check"></i>Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#endpoint_ob_wepa"><i class="fa fa-check"></i>相位角</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#endpoint_ob_water"><i class="fa fa-check"></i>體水份</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#endpoint_ob_inbody_part"><i class="fa fa-check"></i>inbody - 部位別</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#endpoint_ob_water_part"><i class="fa fa-check"></i>體水份 - 部位別</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#endpoint_ob_gi"><i class="fa fa-check"></i>Glucose/Insulin</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#endpoint_ob_lipid"><i class="fa fa-check"></i>Lipid</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#endpoint_ob_kidney"><i class="fa fa-check"></i>Kidney</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#endpoint_ob_hormone"><i class="fa fa-check"></i>Hormone</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#endpoint_ob_hematology"><i class="fa fa-check"></i>Hematology</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#diet_ob"><i class="fa fa-check"></i>飲食(Diet)</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_ob"><i class="fa fa-check"></i>∆成效(Effectiveness)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_ob_inbody"><i class="fa fa-check"></i>Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_ob_wepa"><i class="fa fa-check"></i>相位角</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_ob_water"><i class="fa fa-check"></i>體水份</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_ob_inbody_part"><i class="fa fa-check"></i>inbody - 部位別</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_ob_water_part"><i class="fa fa-check"></i>體水份 - 部位別</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_ob_gi"><i class="fa fa-check"></i>Glucose/Insulin</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_ob_lipid"><i class="fa fa-check"></i>Lipid</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_ob_kidney"><i class="fa fa-check"></i>Kidney</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_ob_hormone"><i class="fa fa-check"></i>Hormone</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_ob_hematology"><i class="fa fa-check"></i>Hematology</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_p_ob"><i class="fa fa-check"></i>∆成效(%)(Effectiveness)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_p_ob_inbody"><i class="fa fa-check"></i>Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_p_ob_wepa"><i class="fa fa-check"></i>相位角</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_p_ob_water"><i class="fa fa-check"></i>體水份</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_p_ob_inbody_part"><i class="fa fa-check"></i>inbody - 部位別</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_p_ob_water_part"><i class="fa fa-check"></i>體水份 - 部位別</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_p_ob_gi"><i class="fa fa-check"></i>Glucose/Insulin</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_p_ob_lipid"><i class="fa fa-check"></i>Lipid</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_p_ob_kidney"><i class="fa fa-check"></i>Kidney</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_p_ob_hormone"><i class="fa fa-check"></i>Hormone</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#delta_p_ob_hematology"><i class="fa fa-check"></i>Hematology</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="strat_1_ob.html"><a href="strat_1_ob.html#Summary_ob"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html"><i class="fa fa-check"></i><b>1.6</b> 續(篩選飲食上傳&gt;80%)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#baseline_ob_filtered"><i class="fa fa-check"></i>初始狀態(Baseline)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#baseline_ob_filtered_inbody"><i class="fa fa-check"></i>Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#baseline_ob_filtered_wepa"><i class="fa fa-check"></i>相位角</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#baseline_ob_filtered_water"><i class="fa fa-check"></i>體水份</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#baseline_ob_filtered_inbody_part"><i class="fa fa-check"></i>inbody - 部位別</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#baseline_ob_filtered_water_part"><i class="fa fa-check"></i>體水份 - 部位別</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#baseline_ob_filtered_gi"><i class="fa fa-check"></i>Glucose/Insulin</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#baseline_ob_filtered_lipid"><i class="fa fa-check"></i>Lipid</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#baseline_ob_filtered_kidney"><i class="fa fa-check"></i>Kidney</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#baseline_ob_filtered_hormone"><i class="fa fa-check"></i>Hormone</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#baseline_ob_filtered_hematology"><i class="fa fa-check"></i>Hematology</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#endpoint_ob_filtered"><i class="fa fa-check"></i>介入後狀態(Endpoint)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#endpoint_ob_filtered_inbody"><i class="fa fa-check"></i>Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#endpoint_ob_filtered_wepa"><i class="fa fa-check"></i>相位角</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#endpoint_ob_filtered_water"><i class="fa fa-check"></i>體水份</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#endpoint_ob_filtered_inbody_part"><i class="fa fa-check"></i>inbody - 部位別</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#endpoint_ob_filtered_water_part"><i class="fa fa-check"></i>體水份 - 部位別</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#endpoint_ob_filtered_gi"><i class="fa fa-check"></i>Glucose/Insulin</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#endpoint_ob_filtered_lipid"><i class="fa fa-check"></i>Lipid</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#endpoint_ob_filtered_kidney"><i class="fa fa-check"></i>Kidney</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#endpoint_ob_filtered_hormone"><i class="fa fa-check"></i>Hormone</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#endpoint_ob_filtered_hematology"><i class="fa fa-check"></i>Hematology</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#diet_ob_filtered"><i class="fa fa-check"></i>飲食(Diet)</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_ob_filtered"><i class="fa fa-check"></i>∆成效(Effectiveness)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_ob_filtered_inbody"><i class="fa fa-check"></i>Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_ob_filtered_wepa"><i class="fa fa-check"></i>相位角</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_ob_filtered_water"><i class="fa fa-check"></i>體水份</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_ob_filtered_inbody_part"><i class="fa fa-check"></i>inbody - 部位別</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_ob_filtered_water_part"><i class="fa fa-check"></i>體水份 - 部位別</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_ob_filtered_gi"><i class="fa fa-check"></i>Glucose/Insulin</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_ob_filtered_lipid"><i class="fa fa-check"></i>Lipid</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_ob_filtered_kidney"><i class="fa fa-check"></i>Kidney</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_ob_filtered_hormone"><i class="fa fa-check"></i>Hormone</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_ob_filtered_hematology"><i class="fa fa-check"></i>Hematology</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_p_ob_filtered"><i class="fa fa-check"></i>∆成效(%)(Effectiveness)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_p_ob_filtered_inbody"><i class="fa fa-check"></i>Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_p_ob_filtered_wepa"><i class="fa fa-check"></i>相位角</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_p_ob_filtered_water"><i class="fa fa-check"></i>體水份</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_p_ob_filtered_inbody_part"><i class="fa fa-check"></i>inbody - 部位別</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_p_ob_filtered_water_part"><i class="fa fa-check"></i>體水份 - 部位別</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_p_ob_filtered_gi"><i class="fa fa-check"></i>Glucose/Insulin</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_p_ob_filtered_lipid"><i class="fa fa-check"></i>Lipid</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_p_ob_filtered_kidney"><i class="fa fa-check"></i>Kidney</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_p_ob_filtered_hormone"><i class="fa fa-check"></i>Hormone</a></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#delta_p_ob_filtered_hematology"><i class="fa fa-check"></i>Hematology</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="strat_1_ob_filtered.html"><a href="strat_1_ob_filtered.html#Summary_ob_filtered"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="strat_1_testosterone.html"><a href="strat_1_testosterone.html"><i class="fa fa-check"></i><b>1.7</b> 分層分析-2: 男性:睪固酮(Testosterone)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_1_testosterone.html"><a href="strat_1_testosterone.html#cor_test_testosterone"><i class="fa fa-check"></i>相關分析(Correlation Analysis)</a></li>
+<li class="chapter" data-level="" data-path="strat_1_testosterone.html"><a href="strat_1_testosterone.html#baseline_testosterone"><i class="fa fa-check"></i>初始狀態(Baseline)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_1_testosterone.html"><a href="strat_1_testosterone.html#inbody"><i class="fa fa-check"></i>Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_1_testosterone.html"><a href="strat_1_testosterone.html#blood"><i class="fa fa-check"></i>Blood</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="strat_1_testosterone.html"><a href="strat_1_testosterone.html#endpoint_testosterone"><i class="fa fa-check"></i>介入後狀態(Endpoint)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_1_testosterone.html"><a href="strat_1_testosterone.html#inbody-1"><i class="fa fa-check"></i>Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_1_testosterone.html"><a href="strat_1_testosterone.html#blood-1"><i class="fa fa-check"></i>Blood</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="strat_1_testosterone.html"><a href="strat_1_testosterone.html#diet_testosterone"><i class="fa fa-check"></i>飲食(Diet)</a></li>
+<li class="chapter" data-level="" data-path="strat_1_testosterone.html"><a href="strat_1_testosterone.html#effectiveness_testosterone"><i class="fa fa-check"></i>成效(Effectiveness)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_1_testosterone.html"><a href="strat_1_testosterone.html#成效-inbody"><i class="fa fa-check"></i>成效(∆)-Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_1_testosterone.html"><a href="strat_1_testosterone.html#成效-blood"><i class="fa fa-check"></i>成效(∆)-Blood</a></li>
+<li class="chapter" data-level="" data-path="strat_1_testosterone.html"><a href="strat_1_testosterone.html#成效-inbody-1"><i class="fa fa-check"></i>成效(%)-Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_1_testosterone.html"><a href="strat_1_testosterone.html#成效-blood-1"><i class="fa fa-check"></i>成效(%)-Blood</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="strat_2_sua.html"><a href="strat_2_sua.html"><i class="fa fa-check"></i><b>1.8</b> 分層分析-3: 尿酸(Serum Uric Acid)</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="strat_2_sua.html"><a href="strat_2_sua.html#cor_sua"><i class="fa fa-check"></i><b>1.8.1</b> 相關分析(Correlation Analysis)</a></li>
+<li class="chapter" data-level="1.8.2" data-path="strat_2_sua.html"><a href="strat_2_sua.html#cutoff_sua_2"><i class="fa fa-check"></i><b>1.8.2</b> Cutoff-1 (♂7.6/♀6.6)</a></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#baseline_sua"><i class="fa fa-check"></i>初始狀態(Baseline)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#inbody-2"><i class="fa fa-check"></i>Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#blood-2"><i class="fa fa-check"></i>Blood</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#endpoint_sua"><i class="fa fa-check"></i>介入後狀態(Endpoint)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#inbody-3"><i class="fa fa-check"></i>Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#blood-3"><i class="fa fa-check"></i>Blood</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#diet_sua"><i class="fa fa-check"></i>飲食(Diet)</a></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#effectiveness_sua"><i class="fa fa-check"></i>成效(Effectiveness)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#成效-inbody-2"><i class="fa fa-check"></i>成效(∆)-Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#成效-blood-2"><i class="fa fa-check"></i>成效(∆)-Blood</a></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#成效-inbody-3"><i class="fa fa-check"></i>成效(%)-Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#成效-blood-3"><i class="fa fa-check"></i>成效(%)-Blood</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8.3" data-path="strat_2_sua.html"><a href="strat_2_sua.html#cutoff_sua_0"><i class="fa fa-check"></i><b>1.8.3</b> Cutoff-2 (5.5)</a></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#baseline_sua0"><i class="fa fa-check"></i>初始狀態(Baseline)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#inbody-4"><i class="fa fa-check"></i>Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#blood-4"><i class="fa fa-check"></i>Blood</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#endpoint_sua0"><i class="fa fa-check"></i>介入後狀態(Endpoint)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#inbody-5"><i class="fa fa-check"></i>Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#blood-5"><i class="fa fa-check"></i>Blood</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#diet_sua0"><i class="fa fa-check"></i>飲食(Diet)</a></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#effectiveness_sua0"><i class="fa fa-check"></i>成效(Effectiveness)</a>
+<ul>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#成效-inbody-4"><i class="fa fa-check"></i>成效(∆)-Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#成效-blood-4"><i class="fa fa-check"></i>成效(∆)-Blood</a></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#成效-inbody-5"><i class="fa fa-check"></i>成效(%)-Inbody</a></li>
+<li class="chapter" data-level="" data-path="strat_2_sua.html"><a href="strat_2_sua.html#成效-blood-5"><i class="fa fa-check"></i>成效(%)-Blood</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="ketone_response.html"><a href="ketone_response.html"><i class="fa fa-check"></i><b>1.9</b> 尿酮體 x 空腹胰島素</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="ketone_response.html"><a href="ketone_response.html#chisq分析"><i class="fa fa-check"></i><b>1.9.1</b> Chisq分析</a>
+<ul>
+<li class="chapter" data-level="" data-path="ketone_response.html"><a href="ketone_response.html#endpoint"><i class="fa fa-check"></i>Endpoint</a></li>
+<li class="chapter" data-level="" data-path="ketone_response.html"><a href="ketone_response.html#baseline"><i class="fa fa-check"></i>Baseline</a></li>
+<li class="chapter" data-level="" data-path="ketone_response.html"><a href="ketone_response.html#pooled"><i class="fa fa-check"></i>Pooled</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9.2" data-path="ketone_response.html"><a href="ketone_response.html#敏感度分析"><i class="fa fa-check"></i><b>1.9.2</b> 敏感度分析</a>
+<ul>
+<li class="chapter" data-level="" data-path="ketone_response.html"><a href="ketone_response.html#endpoint-1"><i class="fa fa-check"></i>Endpoint</a></li>
+<li class="chapter" data-level="" data-path="ketone_response.html"><a href="ketone_response.html#baseline-1"><i class="fa fa-check"></i>Baseline</a></li>
+<li class="chapter" data-level="" data-path="ketone_response.html"><a href="ketone_response.html#pooled-1"><i class="fa fa-check"></i>Pooled</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9.3" data-path="ketone_response.html"><a href="ketone_response.html#optimal-cutoff分析"><i class="fa fa-check"></i><b>1.9.3</b> Optimal Cutoff分析</a>
+<ul>
+<li class="chapter" data-level="" data-path="ketone_response.html"><a href="ketone_response.html#endpoint-2"><i class="fa fa-check"></i>Endpoint</a></li>
+<li class="chapter" data-level="" data-path="ketone_response.html"><a href="ketone_response.html#baseline-2"><i class="fa fa-check"></i>Baseline</a></li>
+<li class="chapter" data-level="" data-path="ketone_response.html"><a href="ketone_response.html#pooled-2"><i class="fa fa-check"></i>Pooled</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9.4" data-path="ketone_response.html"><a href="ketone_response.html#strat_4_ketone_response"><i class="fa fa-check"></i><b>1.9.4</b> 分層分析</a>
+<ul>
+<li class="chapter" data-level="" data-path="ketone_response.html"><a href="ketone_response.html#baseline_kt"><i class="fa fa-check"></i>初始狀態(Baseline)</a></li>
+<li class="chapter" data-level="" data-path="ketone_response.html"><a href="ketone_response.html#endpoint_kt"><i class="fa fa-check"></i>介入後狀態(Endpoint)</a></li>
+<li class="chapter" data-level="" data-path="ketone_response.html"><a href="ketone_response.html#diet_kt"><i class="fa fa-check"></i>飲食(Diet)</a></li>
+<li class="chapter" data-level="" data-path="ketone_response.html"><a href="ketone_response.html#effectiveness_kt"><i class="fa fa-check"></i>成效(Effectiveness)</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="glucose-insulin-response-curvegirc.html"><a href="glucose-insulin-response-curvegirc.html"><i class="fa fa-check"></i><b>2</b> Glucose Insulin Response Curve(GIRC)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ogtt胰島素反應分型.html"><a href="ogtt胰島素反應分型.html"><i class="fa fa-check"></i><b>2.1</b> OGTT胰島素反應分型</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="ogtt胰島素反應分型.html"><a href="ogtt胰島素反應分型.html#pattern-i"><i class="fa fa-check"></i><b>2.1.1</b> Pattern I</a></li>
+<li class="chapter" data-level="2.1.2" data-path="ogtt胰島素反應分型.html"><a href="ogtt胰島素反應分型.html#pattern-ii"><i class="fa fa-check"></i><b>2.1.2</b> Pattern II</a></li>
+<li class="chapter" data-level="2.1.3" data-path="ogtt胰島素反應分型.html"><a href="ogtt胰島素反應分型.html#pattern-iii"><i class="fa fa-check"></i><b>2.1.3</b> Pattern III</a></li>
+<li class="chapter" data-level="2.1.4" data-path="ogtt胰島素反應分型.html"><a href="ogtt胰島素反應分型.html#pattern-iv"><i class="fa fa-check"></i><b>2.1.4</b> Pattern IV</a></li>
+<li class="chapter" data-level="2.1.5" data-path="ogtt胰島素反應分型.html"><a href="ogtt胰島素反應分型.html#pattern-v"><i class="fa fa-check"></i><b>2.1.5</b> Pattern V</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="girc_analysis_.html"><a href="girc_analysis_.html"><i class="fa fa-check"></i><b>2.2</b> GIRC分析</a>
+<ul>
+<li class="chapter" data-level="" data-path="girc_analysis_.html"><a href="girc_analysis_.html#girc_table_all"><i class="fa fa-check"></i>DM x GIRC分佈(All)</a></li>
+<li class="chapter" data-level="" data-path="girc_analysis_.html"><a href="girc_analysis_.html#girc_table_ob"><i class="fa fa-check"></i>DM x GIRC分佈(Obesity Program)</a></li>
+<li class="chapter" data-level="" data-path="girc_analysis_.html"><a href="girc_analysis_.html#girc分層分析"><i class="fa fa-check"></i>GIRC分層分析</a></li>
+<li class="chapter" data-level="" data-path="girc_analysis_.html"><a href="girc_analysis_.html#baseline_girc"><i class="fa fa-check"></i>初始狀態(Baseline)</a>
+<ul>
+<li class="chapter" data-level="" data-path="girc_analysis_.html"><a href="girc_analysis_.html#inbody-8"><i class="fa fa-check"></i>Inbody</a></li>
+<li class="chapter" data-level="" data-path="girc_analysis_.html"><a href="girc_analysis_.html#blood-8"><i class="fa fa-check"></i>Blood</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="girc_analysis_.html"><a href="girc_analysis_.html#endpoint_girc"><i class="fa fa-check"></i>介入後狀態(Endpoint)</a>
+<ul>
+<li class="chapter" data-level="" data-path="girc_analysis_.html"><a href="girc_analysis_.html#inbody-9"><i class="fa fa-check"></i>Inbody</a></li>
+<li class="chapter" data-level="" data-path="girc_analysis_.html"><a href="girc_analysis_.html#blood-9"><i class="fa fa-check"></i>Blood</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="girc_analysis_.html"><a href="girc_analysis_.html#diet_girc"><i class="fa fa-check"></i>飲食(Diet)</a></li>
+<li class="chapter" data-level="" data-path="girc_analysis_.html"><a href="girc_analysis_.html#effectiveness_girc"><i class="fa fa-check"></i>成效(Effectiveness)</a>
+<ul>
+<li class="chapter" data-level="" data-path="girc_analysis_.html"><a href="girc_analysis_.html#成效-inbody-8"><i class="fa fa-check"></i>成效(∆)-Inbody</a></li>
+<li class="chapter" data-level="" data-path="girc_analysis_.html"><a href="girc_analysis_.html#成效-blood-8"><i class="fa fa-check"></i>成效(∆)-Blood</a></li>
+<li class="chapter" data-level="" data-path="girc_analysis_.html"><a href="girc_analysis_.html#成效-inbody-9"><i class="fa fa-check"></i>成效(%)-Inbody</a></li>
+<li class="chapter" data-level="" data-path="girc_analysis_.html"><a href="girc_analysis_.html#成效-blood-9"><i class="fa fa-check"></i>成效(%)-Blood</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="girc_analysis_.html"><a href="girc_analysis_.html#girc_improvemnt_path"><i class="fa fa-check"></i>Pattern改善分析</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="prediction研究中.html"><a href="prediction研究中.html"><i class="fa fa-check"></i><b>3</b> Prediction(研究中)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="predict_cutoff_roc.html"><a href="predict_cutoff_roc.html"><i class="fa fa-check"></i><b>3.1</b> 單因子預測力&amp;切點分析</a></li>
+<li class="chapter" data-level="3.2" data-path="predict_cutoff_roc_filtered.html"><a href="predict_cutoff_roc_filtered.html"><i class="fa fa-check"></i><b>3.2</b> 單因子預測力&amp;切點分析(排除飲食紀律不佳)</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="publication1.html"><a href="publication1.html"><i class="fa fa-check"></i><b>4</b> Publication(1)</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="p1-1.html"><a href="p1-1.html"><i class="fa fa-check"></i><b>4.1</b> Genesis Insulin Response Pattern</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="p1-1.html"><a href="p1-1.html#p1-1fig1"><i class="fa fa-check"></i><b>4.1.1</b> Figure 1. Genesis Pattern Categorization</a></li>
+<li class="chapter" data-level="4.1.2" data-path="p1-1.html"><a href="p1-1.html#p1-1fig2"><i class="fa fa-check"></i><b>4.1.2</b> Figure 2. Genesis Pattern Distribution.</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="p1-2.html"><a href="p1-2.html"><i class="fa fa-check"></i><b>4.2</b> Genesis Insulin Response Pattern Model for early IR/Obesity diagnosis</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="p1-2.html"><a href="p1-2.html#p1-2tab1"><i class="fa fa-check"></i><b>4.2.1</b> Table 1. Genesis Pattern Distribution Characteristics.</a></li>
+<li class="chapter" data-level="4.2.2" data-path="p1-2.html"><a href="p1-2.html#p1-2fig3"><i class="fa fa-check"></i><b>4.2.2</b> Figure 3. Body Composition &amp; Biochem. Profile.</a></li>
+<li class="chapter" data-level="4.2.3" data-path="p1-2.html"><a href="p1-2.html#p1-2fig45"><i class="fa fa-check"></i><b>4.2.3</b> Figure 4,5. Genesis Pattern is a Potential Tool of early IR(Obesity) diagnosis</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="p1-3.html"><a href="p1-3.html"><i class="fa fa-check"></i><b>4.3</b> Weight loss Efficacy(OB)</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="p1-3.html"><a href="p1-3.html#p1-3fig6"><i class="fa fa-check"></i><b>4.3.1</b> Figure 6. body composition/ biochem.</a></li>
+<li class="chapter" data-level="4.3.2" data-path="p1-3.html"><a href="p1-3.html#p1-3tab2"><i class="fa fa-check"></i><b>4.3.2</b> Table 2. Pattern Response Improvement.</a></li>
+<li class="chapter" data-level="4.3.3" data-path="p1-3.html"><a href="p1-3.html#p1-3fig7"><i class="fa fa-check"></i><b>4.3.3</b> Figure 7. CIM weight loss strategy</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Cofit x Genensis 醫療大數據 (分析報告)</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="predict_cutoff_roc_filtered" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> 單因子預測力&amp;切點分析(排除飲食紀律不佳)<a href="predict_cutoff_roc_filtered.html#predict_cutoff_roc_filtered" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="htmlwidget-86349adfa5d821dc4447" style="width:80%;height:auto;" class="datatables html-widget "></div>
+<script type="application/json" data-for="htmlwidget-86349adfa5d821dc4447">{"x":{"filter":"none","vertical":false,"extensions":["Buttons","FixedColumns"],"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128","129","130","131","132","133","134","135","136","137","138","139","140","141","142","143","144","145","146","147","148","149","150","151","152","153","154","155","156","157","158","159","160","161","162","163","164","165","166","167","168","169","170","171","172","173","174","175","176","177","178","179","180","181","182","183","184","185","186","187","188","189","190","191","192","193","194","195","196","197","198","199","200","201","202","203","204","205","206","207","208","209","210","211","212","213","214","215","216","217","218","219","220","221","222","223","224","225","226","227","228","229","230","231","232","233","234","235","236","237","238","239","240","241","242","243","244","245","246","247","248","249","250","251","252","253","254","255","256","257","258","259","260","261","262","263","264","265","266","267","268","269","270","271","272","273","274","275","276","277","278","279","280","281","282","283","284","285","286","287","288","289","290","291","292","293","294","295","296","297","298","299","300","301","302","303","304","305","306","307","308","309","310","311","312","313","314","315","316","317","318","319","320","321","322","323","324","325","326","327","328","329","330","331","332","333","334","335","336","337","338","339","340","341","342","343","344","345","346","347","348","349","350","351","352","353","354","355","356","357","358","359","360","361","362","363","364","365","366","367","368","369","370","371","372","373","374","375","376","377","378","379","380","381","382","383","384","385","386","387","388","389","390","391","392","393","394","395","396","397","398","399","400","401","402","403","404","405","406","407","408","409","410","411","412","413","414","415","416","417","418","419","420","421","422","423","424","425","426","427","428","429","430","431","432","433","434","435","436","437","438","439","440","441","442","443","444","445","446","447","448","449","450","451","452","453","454","455","456","457","458","459","460","461","462","463","464","465","466","467","468","469","470","471","472","473","474","475","476","477","478","479","480","481","482","483","484","485","486","487","488","489","490","491","492","493","494","495","496","497","498","499","500","501","502","503","504","505","506","507","508","509","510","511","512","513","514","515","516","517","518","519","520","521","522","523","524","525","526","527","528","529","530","531","532","533","534","535","536","537","538","539","540","541"],["∆體重(%)","∆BMI(%)","∆肥胖度(%)","∆BMI","∆體重","∆肥胖度","∆臀圍(%)","∆臀圍","∆脂肪質量指數","∆體脂重","∆軀幹脂肪重","∆右手脂肪率(%)","∆左手脂肪率(%)","∆右手脂肪重(%)","∆軀幹脂肪率","∆脂肪質量指數(%)","∆左手脂肪重(%)","∆體脂重(%)","∆軀幹細胞外水(%)","∆軀幹水量(%)","∆軀幹細胞外水","∆軀幹水量","∆臀肌圍","∆骨骼肌質量指數(%)","∆臀肌圍(%)","∆肌肉重","∆骨骼肌質量指數","∆細胞內水","∆肌肉重(%)","∆除脂質量指數","∆左手細胞內水","∆體細胞重","∆腰圍(%)","∆細胞內水(%)","∆軀幹脂肪重(%)","∆軀幹肌肉重(%)","∆軀幹細胞內水","∆軀幹脂肪率(%)","∆左手水量","∆軀幹細胞內水(%)","∆軀幹肌肉重","∆除脂質量指數(%)","∆右手細胞內水","∆腰圍","∆體細胞重(%)","∆左手肌肉重","∆右手水量","∆體水份","∆左手細胞外水","∆左手細胞內水(%)","∆內臟脂肪面積","∆右手水量(%)","∆除脂體重","∆左手水量(%)","∆右手細胞內水(%)","∆基礎代謝率","∆體水份(%)","∆右手細胞外水","∆左手肌肉重(%)","∆骨骼肌重","∆基礎代謝率(%)","∆除脂體重(%)","∆右手細胞外水(%)","∆右手脂肪率","∆細胞外水","∆左手脂肪率","∆蛋白質重","∆骨骼肌重(%)","∆左手細胞外水(%)","∆右手肌肉重","∆細胞外水(%)","∆蛋白質重(%)","∆右手肌肉重(%)","∆右腿細胞內水","∆右手脂肪重","∆右腿細胞內水(%)","∆左腿細胞內水","∆左手脂肪重","∆左腿脂肪率","∆右腿脂肪率","∆左腿細胞內水(%)","∆右腿脂肪重","∆右腿水量(%)","∆右腿水量","∆右腿脂肪重(%)","∆內臟脂肪面積(%)","∆右腿脂肪率(%)","∆內臟脂肪等級","∆左腿脂肪率(%)","∆左腿脂肪重","∆左腿水量","∆左腿水量(%)","∆左腿脂肪重(%)","∆右腿肌肉率","∆左腿肌肉重","∆右腿肌肉率(%)","∆內臟脂肪等級(%)","∆左腿肌肉重(%)","∆右腿細胞外水(%)","∆右腿細胞外水","∆左腿細胞外水(%)","∆左手肌肉率","∆礦物質重","∆左腿細胞外水","∆左手肌肉率(%)","∆肥胖肌少型分數(%)","∆礦物質重(%)","∆骨礦含量","∆肥胖肌少型分數","∆骨礦含量(%)","∆右手肌肉率(%)","∆右手肌肉率","∆體脂率","∆糖化白蛋白%","∆平均血糖值%","∆糖化血色素(%)","∆糖化血色素","∆平均血糖值","∆糖化白蛋白","∆體脂率(%)","∆軀幹肌肉率","∆骨骼肌率","∆骨骼肌率(%)","反三碘甲狀腺素(T0)","∆軀幹肌肉率(%)","黃體激素(T0)","左腿相位角(T0)","睪固酮(T0)","右腿相位角(T0)","性激素結合蛋白(T0)","除脂質量指數(T0)","催乳激素(T0)","空腹血糖(T1)","全身相位角(T0)","軀幹細胞內外水比(T1)","糖化血色素(T1)","糖化白蛋白(T1)","平均血糖值(T1)","右腿相位角(T1)","高密度脂蛋白(T1)","右腿細胞內外水比(T1)","左腿相位角(T1)","細胞內外水比(T1)","∆空腹血糖(%)","∆腰臀比","左手相位角(T0)","∆腰臀比(%)","血清麩胺酸苯醋酸轉氨基脢(T1)","左腿細胞內外水比(T0)","右腿細胞內外水比(T0)","∆空腹血糖","全身相位角(T1)","左腿細胞內外水比(T1)","總膽固醇(T0)","臀肌圍(T0)","細胞內外水比(T0)","左手細胞外水(T0)","左手水量(T0)","左手細胞內水(T0)","骨骼肌質量指數(T0)","右手細胞外水(T0)","軀幹細胞內外水比(T0)","右手水量(T0)","右手細胞內水(T0)","總膽固醇(T1)","肌肉重(T0)","體細胞重(T0)","細胞內水(T0)","∆甲狀腺促進激素(%)","高密度脂蛋白(T0)","碳水攝取率(E%/餐)","軀幹細胞內水(T0)","臀圍(T0)","∆血小板計數(%)","骨礦含量(T0)","血清麩胺酸丙酮酸轉氨基脢(T1)","碳水攝取率(E%)","細胞外水(T0)","∆胰島素阻抗值","軀幹水量(T0)","左手相位角(T1)","∆血小板計數","左手肌肉重(T0)","軀幹細胞外水(T0)","BMI(T0)","右手相位角(T0)","∆軀幹相位角(%)","軀幹脂肪率(T0)","右腿細胞內水(T0)","軀幹肌肉率(T0)","∆血清麩胺酸丙酮酸轉氨基脢(%)","β細胞功能(T1)","全穀雜糧(日)","蛋豆魚肉(餐)","∆解脂脢","右手肌肉重(T0)","∆空腹胰島素","∆胰島素阻抗值(%)","黃燈率","左腿細胞內水(T0)","軀幹肌肉重(T0)","右腿水量(T0)","骨骼肌重(T0)","蛋白質重(T0)","單核球(T1)","∆軀幹相位角","體水份(T0)","基礎代謝率(T0)","右手脂肪率(T0)","肥胖度(T0)","除脂體重(T0)","右手相位角(T1)","低密度脂蛋白(T0)","綠燈率","右腿脂肪率(T0)","∆解脂脢(%)","左腿脂肪率(T0)","低密度脂蛋白(T1)","左手肌肉率(T0)","脂肪攝取率(E%/餐)","∆甲狀腺促進激素","體重(T0)","左手脂肪率(T0)","左腿水量(T0)","飲食紀錄完成率(%)","礦物質重(T0)","蛋白攝取率(E%/餐)","蛋白攝取率(E%)","脂肪攝取率(E%)","右腿細胞外水(T0)","右手肌肉率(T0)","∆右腿肌肉重","∆空腹胰島素(%)","∆右腿肌肉重(%)","∆左腿肌肉率(%)","空腹胰島素(T0)","左腿細胞外水(T0)","脈搏(T0)","∆左腿肌肉率","β細胞功能(T0)","血球容積比(T1)","舒張壓(T0)","解脂脢(T1)","蛋豆魚肉(日)","血紅素(T1)","尿酸(T1)","內臟脂肪面積(T1)","飯後1hr血糖(T0)","甲狀腺促進激素(T0)","∆血清麩胺酸丙酮酸轉氨基脢","三酸甘油脂(T0)","舒張壓(T1)","紀錄數量","∆總評分(%)","腰圍(T0)","雌二醇(T0)","右腿肌肉率(T0)","除脂質量指數(T1)","∆肌肉含水量(%)","∆白血球","上傳照片張數","骨骼肌率(T1)","∆肌肉含水量","內臟脂肪等級(T1)","右手脂肪重(T1)","黃體脂酮(T0)","乳品(日)","目標碳水攝取率(E%)","單核球數量(T0)","年齡","胰島素阻抗值(T0)","左腿肌肉重(T0)","tAUCg(T0)","紅血球分佈寬度(T1)","血小板計數(T1)","三碘甲狀腺素(T0)","體脂率(T1)","油脂赤字(日)","∆嗜鹼性球數量(%)","右腿脂肪重(T1)","左手脂肪重(T1)","左腿脂肪重(T1)","肥胖肌少型分數(T1)","中性球(T0)","澱粉脢(T1)","∆舒張壓(%)","∆淋巴球","目標脂肪攝取率(E%)","OGIRIndex(T0)","平均攝取熱量(餐)","三酸甘油脂(T1)","單核球(T0)","尿液比重(T1)","∆腎絲球過濾速率","∆舒張壓","∆血清麩胺酸苯醋酸轉氨基脢","∆血清麩胺酸苯醋酸轉氨基脢(%)","∆白血球(%)","目標蛋白攝取率(E%)","∆β細胞功能","腎絲球過濾速率(T1)","∆β細胞功能(%)","紅燈率","體脂重(T1)","∆高密度脂蛋白(%)","脂肪質量指數(T1)","∆淋巴球(%)","收縮壓(T0)","蛋豆魚肉赤字(日)","∆腎絲球過濾速率(%)","白血球(T0)","左手細胞內外水比(T1)","濾泡刺激素(T0)","脈搏(T1)","目標全穀雜糧(日)","澱粉脢(T0)","血清麩胺酸苯醋酸轉氨基脢(T0)","中性球(T1)","∆紅血球分佈寬度","肌肉含水量(T1)","紅血球(T1)","∆嗜酸性球數量","∆右手細胞內外水比(%)","嗜伊紅白血球(T0)","∆血液肌酸酐(%)","∆右腿相位角","脂肪攝取量赤字(Kcal/日)","∆左手細胞內外水比","∆血液肌酸酐","∆右腿相位角(%)","∆單核球","∆右手細胞內外水比","∆左手細胞內外水比(%)","∆紅血球分佈寬度(%)","∆尿酸(%)","蛋白攝取量赤字(Kcal/日)","軀幹脂肪重(T1)","軀幹脂肪重(T0)","嗜鹼性球(T0)","血球容積比(T0)","∆中性球(%)","∆三酸甘油脂","∆血紅素","∆嗜伊紅白血球","∆中性球","尿酸鹼度(T1)","∆尿酸","水果(餐)","∆血紅素(%)","臀肌圍(T1)","∆單核球(%)","淋巴球(T0)","骨骼肌率(T0)","游離甲狀腺素(T0)","水果(日)","體細胞重(T1)","骨礦含量(T1)","骨骼肌質量指數(T1)","血紅素(T0)","細胞內水(T1)","礦物質重(T1)","軀幹細胞內水(T1)","腎絲球過濾速率(T0)","∆嗜酸性球數量(%)","∆平均血色素量(%)","右腿肌肉重(T0)","蛋白質重(T1)","∆左腿相位角(%)","胰島素阻抗值(T1)","∆高密度脂蛋白","右手細胞內外水比(T1)","總攝取熱量(餐)","體脂重(T0)","骨骼肌重(T1)","肌肉重(T1)","紅血球(T0)","∆尿液比重","甲狀腺促進激素(T1)","∆平均血色素量","∆脈搏(%)","∆嗜伊紅白血球(%)","∆尿液比重(%)","右手細胞內水(T1)","左手細胞外水(T1)","∆三酸甘油脂(%)","油脂(餐)","∆總膽固醇(%)","右手肌肉重(T1)","飯後2hr血糖(T0)","右腿細胞內水(T1)","∆全身相位角(%)","∆嗜鹼性球(%)","乳品赤字(日)","軀幹肌肉重(T1)","腰臀比(T1)","∆紅血球分佈寬度-標準差(%)","左腿肌肉率(T0)","右手水量(T1)","基礎代謝率(T1)","除脂體重(T1)","解脂脢(T0)","臀圍(T1)","∆左手相位角(%)","紅血球分佈寬度-標準差(T0)","蔬菜(餐)","體水份(T1)","∆血球容積比","∆紅血球分佈寬度-標準差","∆澱粉脢","∆左手相位角","∆左腿相位角","總評分(T0)","∆嗜鹼性球","肥胖肌少型分數(T0)","∆總膽固醇","血小板計數(T0)","∆全身相位角","目標水果(日)","右腿水量(T1)","目標乳品(日)","∆脈搏","∆平均色素濃度(%)","軀幹水量(T1)","∆右手相位角","∆細胞內外水比(%)","體脂率(T0)","熱量赤字(日)","∆右手相位角(%)","∆血球容積比(%)","肌肉含水量(T0)","右腿肌肉率(T1)","細胞外水(T1)","∆左腿細胞內外水比(%)","∆細胞內外水比","∆右腿細胞內外水比(%)","∆右腿細胞內外水比","飯後2hr胰島素(T0)","∆澱粉脢(%)","tAUCi(T0)","紅血球分佈寬度(T0)","∆身高","∆身高(%)","∆左腿細胞內外水比","軀幹肌肉率(T1)","∆收縮壓(%)","軀幹相位角(T1)","左手細胞內外水比(T0)","∆嗜鹼性球數量","蔬菜赤字(日)","淋巴球(T1)","軀幹細胞外水(T1)","飯後1hr胰島素(T0)","乳品(餐)","空腹胰島素(T1)","∆軀幹細胞內外水比(%)","腰圍(T1)","∆軀幹細胞內外水比","右腿脂肪率(T1)","左腿脂肪率(T1)","全穀雜糧(餐)","∆單核球數量","平均血色素量(T0)","∆單核球數量(%)","脫氫表雄固酮硫酸鹽(T0)","體重(T1)","∆收縮壓","目標蔬菜(日)","軀幹脂肪率(T1)","尿酸鹼度(T0)","血液肌酸酐(T1)","BMI(T1)","血清麩胺酸丙酮酸轉氨基脢(T0)","糖化血色素(T0)","糖化白蛋白(T0)","平均血糖值(T0)","空腹血糖(T0)","右腿肌肉重(T1)","右手肌肉率(T1)","客戶療程分類","左手脂肪率(T1)","嗜酸性球數量(T1)","右手脂肪率(T1)","全穀雜糧赤字(日)","白血球(T1)","平均紅血球值(T1)","平均紅血球值(T0)","紅血球分佈寬度-標準差(T1)","蔬菜(日)","內臟脂肪等級(T0)","水果赤字(日)","左手肌肉率(T1)","肥胖度(T1)","左腿細胞外水(T1)","內臟脂肪面積(T0)","右手細胞內外水比(T0)","血液肌酸酐(T0)","左腿脂肪重(T0)","∆低密度脂蛋白","嗜伊紅白血球(T1)","右腿脂肪重(T0)","右腿細胞外水(T1)","總攝取熱量(日)","左腿肌肉率(T1)","平均血色素量(T1)","收縮壓(T1)","∆平均紅血球值","∆低密度脂蛋白(%)","右手脂肪重(T0)","∆紅血球(%)","∆平均紅血球值(%)","左手脂肪重(T0)","脂肪質量指數(T0)","左腿肌肉重(T1)","嗜鹼性球數量(T1)","∆紅血球","左腿水量(T1)","油脂(日)","碳水攝取量赤字(Kcal/日)","平均色素濃度(T0)","嗜鹼性球(T1)","目標攝取熱量(日)","∆平均色素濃度","左腿細胞內水(T1)","右手細胞外水(T1)","尿酸(T0)","腰臀比(T0)","左手肌肉重(T1)","嗜鹼性球數量(T0)","左手水量(T1)","左手細胞內水(T1)","∆尿酸鹼度(%)","軀幹相位角(T0)","∆尿酸鹼度","平均色素濃度(T1)","目標油脂(日)","總評分(T1)","嗜酸性球數量(T0)","尿液比重(T0)","單核球數量(T1)","∆總評分","目標蛋豆魚肉(日)"],["&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&gt;=","&lt;=","&lt;=","&lt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&gt;=","&lt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&gt;=","&lt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&gt;=","&lt;=","&gt;=","&gt;=","&gt;=","&lt;=","&lt;=","&lt;=","&gt;=","&gt;=","&lt;=","&gt;=","&lt;=","&lt;=","&gt;=","&lt;=","&gt;=","&gt;=","&lt;=","&gt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&lt;=","&gt;=","&gt;=","&gt;=","&lt;=","&lt;=","&lt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&gt;=","&lt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&lt;=","&lt;=","&gt;=","&lt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&gt;=","&lt;=","&lt;=","&gt;=","&gt;=","&lt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&gt;=","&lt;=","&gt;=","&gt;=","&lt;=","&gt;=","&lt;=","&gt;=","&lt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&gt;=","&gt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&gt;=","&gt;=","&gt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&lt;=","&gt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&lt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&gt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&lt;=","&lt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&lt;=","&gt;=","&lt;=","&gt;=","&lt;=","&lt;=","&gt;=","&gt;=","&lt;=","&gt;=","&gt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&lt;=","&lt;=","&gt;=","&gt;=","&gt;=","&gt;=","&lt;=","&lt;=","&lt;=","&gt;=","&lt;=","&gt;=","&lt;=","&gt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&gt;=","&gt;=","&lt;=","&lt;=","&lt;=","&gt;=","&lt;=","&gt;=","&lt;=","&gt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&lt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&gt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&gt;=","&gt;=","&lt;=","&gt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&lt;=","&gt;=","&lt;=","&gt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&gt;=","&lt;=","&gt;=","&lt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&lt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&gt;=","&gt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;=","&lt;="],[-8.01,-8,-7.94,-2.28,-5.6,-11,-4.58,-1.6,-1.5,-3.7,-2.3,-18.8,-18.96,-18.75,-42.49,-11.85,-18.37,-12.25,-5.19,-4.85,-0.3,-0.7,-0.8,-3.3,-2.6,-1.5,-0.3,-0.7,-3.72,-0.6,-0.07,-0.9,-7.3,-3.05,-15.52,-5.08,-0.6,-15.16,-0.09,-5.94,-0.95,-3.55,-0.07,-6.4,-3.2,-0.18,-0.16,-1.2,-0.04,-6.16,-23.5,-6.92,-1.6,-6.29,-6.49,-34,-3.53,-0.06,-7.07,-1.2,-2.58,-3.51,-7.69,-38.06,-0.6,-36.65,-0.3,-3.39,-6.41,-0.17,-4.05,-3.66,-6.81,-0.11,-0.4,-2.92,-0.1,-0.4,-22.09,-21.81,-4.04,-0.5,-2.52,-0.12,-10.26,-17.68,-10.09,-3,-10.17,-0.5,-0.2,-3.84,-13.89,-0.2,-0.22,-2.54,-18.75,-3.38,-2.59,-0.06,-2.83,-2.4,-0.02,-0.09,-2.44,4.86,-0.69,-0.06,1.37,-1.96,-5.68,-3.8,-2,-14.17,-6.71,-4.92,-0.3,-8.61,-1.39,-4.72,-3.3,1.64,4.99,1.03,-3.45,7.57,5.4,0.47,6,27.33,16.7,11.46,77,5,0.38,5,9.36,96.8,5.5,49.1,0.38,5.5,0.38,-12.05,-0.04,4.6,-2.6,17,0.38,0.38,-11,5.3,0.38,209,28.3,0.38,0.74,1.94,1.24,7.1,0.75,0.38,1.98,1.23,203,48,33,23.1,9.79,64.6,15.83,10.4,34,-9.06,2.5,11,15.91,13.2,-0.9,16.9,4.8,-26,2.5,6.4,27.92,4.9,-1.45,338.96,2.97,95.2,-41.38,233.1,1.14,3.65,11,2.52,-4.13,-69.7,9,3.17,21.53,4.75,26.5,9.5,6.8,-0.2,35.3,1356,340.38,121,48.3,4.7,125,90.67,204.01,18.18,202.26,107,88.7,53.99,0.08,81.7,341.52,5.15,100,3.26,26.3,28.05,55.62,1.78,89.7,0.2,-58.49,0.22,-0.65,9.09,1.82,79,-0.6,125.1,42.1,76,35,10.53,14.2,6.1,109,142,1.31,-9,116,72,216,4.84,102,50,7.85,18.2,-0.14,-0.7,185,36.85,-0,10,1.5,6.87,0.02,16.86,0.4,39,2.3,7.64,15210,13.7,317,124,36.4,2.13,-100,3.2,1.5,3.2,30.46,62.3,40,-8.96,-3.4,56.72,4243.8,347.39,86,6.6,1.02,-15.7,-6,-8,-29.41,-11.94,23.44,67.8,103.89,41.75,0.37,24.3,-11.89,7.5,-2.76,116,2.34,-6.49,6.8,0.38,22.9,95,1.96,44,16,60.2,0.2,0.73,4.69,0,-1.06,2.2,-10.71,-0.1,109.85,-0,0.03,-1.61,2.6,-0,-0.81,2.24,12.16,82.64,12.7,9.6,0.9,40.6,8.33,-25,0.1,-0.5,4.5,6,1.3,0.61,1.68,26.5,36.21,27.8,35.61,22.93,0,31.1,2.71,7.4,14.1,21.8,3.25,10.5,127.04,0,0.96,91.9,10.1,3.77,1.8,2.9,0.38,128932.89,19.9,28.5,54.3,5.13,0,2.17,0.3,9.78,-19.75,0.1,1.24,0.81,-14.19,2.11,10.59,3.15,134,3.99,2,-14.29,-0.07,21.61,0.92,3.38,91.9,2.38,1530,53.7,24,32.2,2.33,44.2,1.71,39.5,-0.3,-0.4,2,-0.1,0.2,64,-0.2,27.92,28,252,-0.2,0.42,6.71,0.21,13,-1.45,19.5,0.1,0,34,511.61,1.92,-0.74,0.74,8.28,15,-1.3,0,-0.53,-0,135,6.25,4716.9,13.6,0,0,0,88.5,-0.68,8.2,0.38,-0.1,2.92,28,7,69.3,0.02,9.86,-0.26,82.9,-0,181.23,147.25,1.61,-0.2,29.4,-40,230.78,76.5,-1,6.49,255.65,6,0.57,24.62,16,6,13.99,125.5,85,102.4,81.9,null,221.05,0.1,216.07,-1.16,7.2,93.8,94.7,40.3,3.8,13,0.42,80,115,1.92,82.2,0.38,0.56,3.8,-4,1.9,4,2.09,1061.54,93.8,30.9,150,-0.4,-3.12,1.8,5.83,-0.43,1.7,17.2,6.29,null,0.22,5.21,3.27,-20.67,33.4,1.1,1726.3,-0.9,3.02,0.52,4.4,0.77,1.86,null,1.15,0.71,-22.22,7.8,-2,34.3,3.9,65,0.3,1.01,0.7,-6,18],[2,1.9758,1.8522,1.7882,1.7109,1.716,1.5476,1.528,1.5725,1.5253,1.4853,1.5247,1.5298,1.5251,1.4971,1.4939,1.4864,1.4693,1.4755,1.4807,1.4387,1.4548,1.4788,1.4599,1.452,1.5021,1.4706,1.4646,1.5067,1.4664,1.4592,1.4387,1.4507,1.4779,1.4238,1.4276,1.4452,1.4196,1.4547,1.4667,1.4263,1.4807,1.4209,1.4368,1.4494,1.4346,1.4149,1.4379,1.4307,1.4592,1.455,1.4442,1.4258,1.4396,1.4459,1.4318,1.444,1.4238,1.4384,1.4,1.4258,1.4193,1.4139,1.4232,1.4016,1.419,1.3983,1.4053,1.4379,1.3936,1.4104,1.4374,1.4081,1.4086,1.3932,1.3916,1.4265,1.3942,1.4011,1.3899,1.3776,1.3601,1.3612,1.395,1.3433,1.3498,1.3382,1.357,1.3499,1.3409,1.3766,1.3437,1.309,1.3609,1.3566,1.3437,1.3514,1.2843,1.3246,1.3683,1.322,1.3396,1.2743,1.3249,1.3331,1.2945,1.3009,1.298,1.292,1.3006,1.2809,1.2625,1.2556,1.2698,1.2677,1.2677,1.2617,1.2617,1.2676,1.2258,1.2221,1.2376,1.2357,1.2795,1.2258,1.2941,1.2307,1.268,1.2535,1.2668,1.2059,1.3908,1.1982,1.2512,1.1891,1.1712,1.1712,1.1712,1.2033,1.2062,1.1929,1.1967,1.2094,1.1933,1.1988,1.2008,1.2075,1.1986,1.256,1.2036,1.1742,1.2145,1.1794,1.2034,1.1903,1.1794,1.1653,1.1555,1.1609,1.15,1.1644,1.1854,1.1822,1.1822,1.1828,1.1556,1.1556,1.1556,1.1746,1.1747,1.186,1.1912,1.1884,1.1646,1.1408,1.1617,1.1622,1.1304,1.1802,1.1912,1.1771,1.1656,1.1441,1.1572,1.172,1.1635,1.1627,1.1488,1.1548,1.1764,1.1692,1.1788,1.1798,1.1578,1.1276,1.1386,1.1759,1.1585,1.1706,1.1506,1.1502,1.1387,1.132,1.1316,1.1441,1.1324,1.132,1.1326,1.1469,1.1499,1.132,1.1687,1.1664,1.193,1.1844,1.1302,1.191,1.1362,1.1621,1.1657,1.1659,1.1754,1.1464,1.1229,1.1117,1.1377,1.1458,1.1585,1.1506,1.1413,1.1359,1.1519,1.1487,1.1519,1.1312,1.1466,1.128,1.1636,1.1256,1.1628,1.1029,1.1298,1.1238,1.1483,1.1122,1.1244,1.1402,1.1025,1.1493,1.1296,1.1228,1.1315,1.1962,1.1311,1.1217,1.1572,1.0904,1.1347,1.0819,1.1313,1.1217,1.1277,1.0819,1.1373,1.147,1.1544,1.115,1.1491,1.0929,1.0978,1.1218,1.0979,1.1153,1.1506,1.1117,1.1448,1.1122,1.1279,1.1028,1.1026,1.1339,1.0965,1.1084,1.1198,1.1228,1.1425,1.1375,1.1244,1.1369,1.133,1.138,1.1356,1.1252,1.1042,1.1186,1.0809,1.0935,1.1136,1.1045,1.1256,1.1217,1.1515,1.1305,1.1182,1.1099,1.1,1.1261,1.1438,1.0953,1.0938,1.128,1.0929,1.25,1.1145,1.1098,1.0787,1.1373,1.1356,1.1265,1.0663,1.0789,1.0707,1.0933,1.1163,1.0852,1.093,1.0972,1.1147,1.0904,1.0965,1.0711,1.0896,1.1155,1.1344,1.0898,1.1214,1.1039,1.1193,1.0709,1.102,1.1187,1.1068,1.0784,1.1273,1.1146,1.0599,1.0888,1.0935,1.0848,1.1245,1.0865,1.074,1.0946,1.2997,1.0555,1.092,1.0996,1.0951,1.0654,1.0892,1.0891,1.096,1.0965,1.0603,1.0736,1.0888,1.0889,1.104,1.1093,1.0731,1.0694,1.0843,1.1128,1.0889,1.0954,1.0637,1.1032,1.1066,1.0736,1.1065,1.0903,1.1032,1.095,1.0866,1.0888,1.0835,1.1004,1.0902,1.0825,1.072,1.0889,1.0803,1.0894,1.1007,1.0869,1.0806,1.0878,1.0973,1.093,1.093,1.0759,1.1226,1.0595,1.0924,1.1022,1.0991,1.0894,1.0614,1.1193,1.0529,1.072,1.0684,1.0876,1.0749,1.1061,1.0965,1.079,1.0661,1.0769,1.06,1.08,1.0639,1.0964,1.0846,1.0819,1.0852,1.072,1.1007,1.0954,1.0404,1.0702,1.0915,1.0737,1.0819,1.1091,1.0966,1.0657,1.0997,1.0588,1.103,1.0268,1.0268,1.0674,1.0745,1.0495,1.0653,1.0671,1.0745,1.1216,1.0783,1.0837,1.0649,1.0766,1.0919,1.076,1.0686,1.076,1.0534,1.0588,1.0928,1.0449,1.074,1.0351,1.1247,1.097,1.0495,1.0251,1.0715,1.0151,1.0485,1.0625,1.0566,1.0549,1.0549,1.0549,1.0488,1.086,1.0675,1,1.072,1.0453,1.0599,1.0563,1.0828,1.0648,1.0606,1.0604,1.0524,1.0599,1.06,1.0745,1.0686,1.0617,1.059,1.0648,1.0713,1.0606,1.0657,1.1015,1.0654,1.0621,1.0599,1.069,1.0698,1.0539,1.0172,1.0592,1.048,1.0686,1.0303,1.0447,1.0501,1.0411,1,1.0326,1.0411,1.0595,1.0436,1.0491,1.0348,1.0212,1.0263,1.0425,1.0468,1.0418,1.0075,1.0313,1,1.0308,1.0308,1.0065,1.0522,1.0065,1.0008,1.0169,1.0062,1.0023,1.0226,1.0112,1.0005,1.0061],[1,0.9874,0.9245,0.8931,0.8522,0.8553,0.771,0.7617,0.7804,0.7579,0.7453,0.761,0.7642,0.761,0.7484,0.7383,0.7421,0.7296,0.7383,0.7383,0.715,0.7243,0.7336,0.7264,0.7196,0.7477,0.7327,0.729,0.7523,0.729,0.7243,0.715,0.7296,0.7336,0.7138,0.7138,0.7243,0.7107,0.7196,0.7383,0.7107,0.7383,0.7056,0.7201,0.7196,0.717,0.7103,0.717,0.7103,0.7243,0.729,0.7196,0.7107,0.715,0.7196,0.7138,0.7201,0.715,0.717,0.7013,0.7107,0.7075,0.7056,0.7044,0.7056,0.7013,0.695,0.6981,0.715,0.695,0.7056,0.717,0.7013,0.7056,0.6918,0.6963,0.715,0.6918,0.6981,0.6918,0.6963,0.6761,0.6776,0.6916,0.6667,0.6776,0.6635,0.6824,0.6698,0.6667,0.6916,0.6776,0.6572,0.6792,0.6792,0.6698,0.6792,0.6447,0.6589,0.6822,0.6589,0.6635,0.6321,0.6682,0.6604,0.6509,0.6447,0.6495,0.6541,0.6495,0.6447,0.6289,0.6226,0.6384,0.6289,0.6289,0.6258,0.6258,0.6321,0.6069,0.6164,0.6226,0.6226,0.6667,0.6195,0.6613,0.6075,0.6557,0.6308,0.629,0.5981,0.6935,0.5943,0.6168,0.5943,0.5912,0.5912,0.5912,0.5943,0.5975,0.5943,0.5943,0.6025,0.5975,0.6038,0.6028,0.6006,0.5975,0.6262,0.6075,0.5881,0.6107,0.6066,0.5943,0.6028,0.5935,0.5888,0.5841,0.5888,0.5755,0.5888,0.5888,0.5981,0.5981,0.5881,0.5888,0.5888,0.5888,0.5874,0.5755,0.5912,0.6028,0.5981,0.5868,0.5654,0.5912,0.5786,0.5701,0.5918,0.6028,0.5984,0.5868,0.5786,0.5841,0.5849,0.5888,0.5869,0.5818,0.5654,0.5818,0.5943,0.5918,0.5912,0.5818,0.5629,0.5755,0.5918,0.5918,0.5818,0.5701,0.5818,0.5561,0.5723,0.5723,0.566,0.5748,0.5723,0.5692,0.5818,0.566,0.5723,0.582,0.5818,0.5943,0.5943,0.5566,0.5975,0.5755,0.5692,0.5755,0.583,0.5943,0.5818,0.5561,0.5692,0.5723,0.5597,0.5755,0.5723,0.5561,0.5566,0.5755,0.5854,0.5755,0.5692,0.571,0.5514,0.5714,0.566,0.5741,0.5503,0.5671,0.5629,0.5818,0.5566,0.5723,0.5779,0.5545,0.5753,0.5723,0.566,0.564,0.5975,0.5723,0.5692,0.5741,0.5535,0.582,0.5374,0.566,0.5566,0.5723,0.5374,0.5723,0.5786,0.5593,0.5566,0.5723,0.5377,0.5472,0.5615,0.5566,0.5577,0.5747,0.544,0.5333,0.5566,0.5692,0.5517,0.5597,0.5723,0.5566,0.5692,0.5566,0.566,0.5865,0.5786,0.5597,0.5659,0.5597,0.566,0.566,0.5591,0.5409,0.5721,0.5535,0.5597,0.5566,0.5472,0.5665,0.5566,0.5791,0.5629,0.5597,0.5535,0.5656,0.566,0.5628,0.5503,0.5409,0.566,0.5369,0.6613,0.56,0.5566,0.5377,0.5723,0.566,0.569,0.5533,0.5314,0.522,0.5607,0.5597,0.5535,0.5514,0.5377,0.5701,0.5409,0.5514,0.5503,0.5561,0.5701,0.569,0.5566,0.5629,0.5503,0.544,0.5409,0.5503,0.5723,0.5597,0.5314,0.5723,0.5692,0.5304,0.5597,0.5458,0.5377,0.5656,0.5566,0.5346,0.5566,0.6667,0.5346,0.5574,0.5574,0.5566,0.5377,0.5574,0.5503,0.5615,0.5566,0.5246,0.5472,0.5346,0.5566,0.5421,0.5475,0.522,0.5205,0.5535,0.5409,0.5566,0.5697,0.544,0.5466,0.5512,0.5472,0.5481,0.5521,0.5466,0.5615,0.5615,0.5472,0.5472,0.5409,0.5597,0.5353,0.5533,0.5374,0.5457,0.5314,0.5597,0.5346,0.537,0.5346,0.5697,0.5597,0.5597,0.5346,0.5656,0.5234,0.5628,0.544,0.5629,0.5314,0.5432,0.5566,0.5327,0.528,0.5314,0.5535,0.5503,0.5409,0.5394,0.5514,0.5189,0.5574,0.5157,0.524,0.5252,0.5697,0.5374,0.5374,0.5535,0.5377,0.5467,0.5346,0.5047,0.5472,0.5656,0.5514,0.5374,0.5607,0.5561,0.537,0.5472,0.5177,0.5588,0.4907,0.4907,0.5234,0.522,0.5144,0.5123,0.5374,0.5472,0.5472,0.5346,0.5615,0.5241,0.5283,0.538,0.5421,0.5409,0.5421,0.5283,0.522,0.5535,0.5377,0.5346,0.5346,0.5714,0.5566,0.5144,0.4969,0.5377,0.4968,0.5314,0.5252,0.5314,0.5126,0.5126,0.5126,0.522,0.5314,0.5189,0.5189,0.5377,0.5157,0.5314,0.5126,0.5283,0.5157,0.5126,0.5185,0.5283,0.5314,0.5157,0.522,0.5283,0.5369,0.5093,0.5234,0.544,0.5377,0.5283,0.5503,0.5377,0.5246,0.5314,0.5283,0.522,0.516,0.5157,0.5252,0.5314,0.5283,0.522,0.5314,0.5047,0.5252,0.5189,0.5126,0.5205,0.5157,0.5094,0.5283,0.5031,0.5,0.5283,0.5287,0.541,0.5314,0.522,0.522,0.5189,0.541,0.541,0.5209,0.514,0.5209,0.4843,0.5252,0.5063,0.4843,0.5285,0.4874,0.5189,0.4843],[1,1,0.9673,0.9216,0.9412,0.9281,0.8333,0.8137,0.9118,0.8889,0.6732,0.7974,0.7843,0.8039,0.7516,0.9314,0.7712,0.8693,0.7255,0.7843,0.8137,0.7941,0.8627,0.8235,0.8627,0.8235,0.8039,0.8039,0.7745,0.8235,0.8431,0.8137,0.6144,0.8529,0.6601,0.7124,0.6863,0.6863,0.8922,0.6275,0.7778,0.7843,0.8137,0.6732,0.8333,0.7255,0.6471,0.7712,0.8235,0.8431,0.6961,0.7745,0.7712,0.8235,0.7941,0.7712,0.7712,0.6471,0.7778,0.6667,0.7712,0.7647,0.7353,0.902,0.598,0.9281,0.8105,0.8235,0.8039,0.7451,0.6961,0.7647,0.7778,0.6765,0.8235,0.6863,0.6765,0.8366,0.7647,0.7778,0.5294,0.7843,0.7451,0.8235,0.8039,0.6176,0.817,0.5752,0.8105,0.7712,0.6176,0.549,0.5817,0.7124,0.6536,0.7255,0.5817,0.5752,0.7353,0.7255,0.7059,0.8366,0.7712,0.5392,0.8301,0.549,0.8039,0.6373,0.4314,0.6667,0.5294,0.6928,0.7647,0.5425,0.7647,0.7647,0.7647,0.7647,0.6797,0.7712,0.4706,0.5163,0.4902,0.9091,0.4379,0.7941,0.7843,0.8235,0.5392,0.5882,0.7059,0.6765,0.7255,0.8137,0.6,0.4379,0.4379,0.4379,0.7304,0.7516,0.6348,0.6696,0.6435,0.5752,0.4837,0.549,0.6863,0.6471,0.6667,0.4804,0.5621,0.5478,0.2957,0.7974,0.4314,0.5098,0.451,0.4412,0.402,0.5621,0.4412,0.6765,0.4412,0.4412,0.6797,0.3431,0.3431,0.3431,0.6161,0.902,0.6405,0.4412,0.5098,0.4737,0.6765,0.3072,0.6471,0.4608,0.5461,0.4412,0.4174,0.4868,0.3987,0.4608,0.6144,0.4314,0.4752,0.3791,0.8333,0.7582,0.3268,0.5263,0.5556,0.5033,0.5882,0.4052,0.4868,0.25,0.6797,0.6863,0.3987,0.8529,0.3987,0.3922,0.732,0.3824,0.3987,0.4902,0.3529,0.8105,0.3987,0.6261,0.6209,0.6536,0.5359,0.7908,0.5425,0.3725,0.8954,0.7778,0.5893,0.4118,0.3464,0.6765,0.2026,0.4771,0.9216,0.6797,0.6536,0.8824,0.8693,0.5882,0.2829,0.5882,0.4706,0.6405,0.8333,0.8,0.4771,0.7908,0.5817,0.5182,0.5359,0.3725,0.5425,0.2941,0.4348,0.4503,0.7385,0.366,0.4379,0.6393,0.6144,0.3856,0.3399,0.5172,0.3268,0.313,0.6176,0.5556,0.6732,0.3399,0.6176,0.4706,0.4379,0.2258,0.5817,0.634,0.7778,0.5948,0.5425,0.3464,0.5563,0.5652,0.8693,0.1818,0.5425,0.4248,0.5676,0.3268,0.4248,0.3268,0.1569,0.6471,0.4379,0.3061,0.3072,0.6275,0.6556,0.7451,0.6471,0.6144,0.6467,0.8497,0.3367,0.1961,0.2026,0.5621,0.6863,0.4671,0.6732,0.4868,0.6275,0.5425,0.5948,0.2783,0.4837,0.7636,0.4771,0.7059,0.5098,0.713,1,0.4426,0.5098,0.5817,0.4706,0.6144,0.663,0.1826,0.7516,0.8889,0.2451,0.5163,0.2549,0.4412,0.8366,0.2843,0.6601,0.4804,0.1438,0.3039,0.2941,0.5978,0.2353,0.5033,0.5948,0.9739,0.3922,0.5686,0.2157,0.3856,0.7451,0.3333,0.2418,0.52,0.1373,0.5758,0.6667,0.5043,0.1895,0.6013,0.3007,0.8182,0.3464,0.3478,0.4174,0.3072,0.3987,0.3217,0.3922,0.313,0.3268,0.9214,0.2614,0.8039,0.2222,0.7647,0.7434,0.9216,0.7826,0.2418,0.9673,0.2222,0.1652,0.2092,0.6711,0.688,0.2614,0.6429,0.3464,0.6711,0.3043,0.2261,0.4706,0.3987,0.7974,0.1569,0.7285,0.2348,0.6961,0.3791,0.8954,0.3007,0.7778,0.4524,0.7908,0.1826,0.1961,0.1961,0.6275,0.487,0.6667,0.9135,0.7386,0.1961,0.8954,0.869,0.6405,0.3922,0.7059,0.6078,0.2876,0.1961,0.8758,0.7632,0.2843,0.9085,0.2087,0.9085,0.8163,0.7124,0.1739,0.6471,0.6176,0.2549,0.4902,0.6275,0.8954,0.8529,0.2157,0.2,0.2255,0.6176,0.4216,0.3824,0.3907,0.6209,0.9338,0.7009,1,1,0.7549,0.9412,0.7041,0.887,0.451,0.2745,0.9216,0.6601,0.2,0.8212,0.8039,0.7566,0.451,0.3595,0.451,0.4837,0.7255,0.3595,0.1176,0.6013,0.0654,0.6765,0.3333,0.7041,0.9281,0.4837,0.7895,0.3333,0.6928,0.4444,0.9216,0.9216,0.9216,0.5882,0.8497,0.9281,0,0.4902,0.7059,0.4902,0.9412,0.8889,0.9739,1,0.2143,0.4706,0.4902,0.9085,0.9412,0.6928,0.4261,0.9608,0.7255,0.3137,0.3333,0.6536,0.5621,0.3987,0.6435,0.4902,0.6993,0.8758,0.9836,0.3203,0.6471,0.3268,0.6928,0.3333,0.281,0.9608,0.3987,0,0.6144,0.5217,0.902,0.8497,0.4248,0.8954,0.7908,0.1111,0.3913,0.2174,0.2418,0.0196,0.3464,0,0.0696,0.0696,0.0805,0.7843,0.0805,0.9281,0.0654,0.4183,0.9477,0.0592,0.9869,0.0065,1],[1,0.9758,0.8848,0.8667,0.7697,0.7879,0.7143,0.7143,0.6607,0.6364,0.8121,0.7273,0.7455,0.7212,0.7455,0.5625,0.7152,0.6,0.75,0.6964,0.625,0.6607,0.6161,0.6364,0.5893,0.6786,0.6667,0.6607,0.7321,0.6429,0.6161,0.625,0.8364,0.625,0.7636,0.7152,0.7589,0.7333,0.5625,0.8393,0.6485,0.6964,0.6071,0.7636,0.6161,0.7091,0.7679,0.6667,0.6071,0.6161,0.7589,0.6696,0.6545,0.6161,0.6518,0.6606,0.6727,0.7768,0.6606,0.7333,0.6545,0.6545,0.6786,0.5212,0.8036,0.4909,0.5879,0.5818,0.6339,0.6485,0.7143,0.6727,0.6303,0.7321,0.5697,0.7054,0.75,0.5576,0.6364,0.6121,0.8482,0.5758,0.6161,0.5714,0.5394,0.7321,0.5212,0.7818,0.5394,0.5697,0.7589,0.7946,0.7273,0.6485,0.703,0.6182,0.7697,0.7091,0.5893,0.6429,0.6161,0.503,0.503,0.7857,0.503,0.7455,0.497,0.6607,0.8606,0.6339,0.7515,0.5697,0.4909,0.7273,0.503,0.503,0.497,0.497,0.5879,0.4545,0.7515,0.7212,0.7455,0.3704,0.7879,0.5,0.4464,0.4444,0.7143,0.6786,0.5,0.7143,0.4727,0.4375,0.5891,0.7333,0.7333,0.7333,0.4729,0.4545,0.5581,0.5271,0.5659,0.6182,0.7152,0.6518,0.5212,0.5515,0.5893,0.7232,0.6121,0.6667,0.8837,0.4061,0.7589,0.6696,0.7143,0.7143,0.7589,0.5879,0.7232,0.5089,0.7411,0.7411,0.503,0.8125,0.8125,0.8125,0.5586,0.2727,0.5455,0.75,0.6786,0.6909,0.4643,0.8545,0.5152,0.6696,0.6341,0.75,0.7597,0.6788,0.7455,0.6964,0.5576,0.7321,0.6875,0.7697,0.3214,0.4182,0.8424,0.6524,0.6242,0.6545,0.5394,0.7333,0.689,0.9085,0.4909,0.4643,0.7515,0.2857,0.7333,0.7394,0.4121,0.75,0.7333,0.6424,0.7939,0.3394,0.7333,0.5426,0.5455,0.5394,0.6485,0.3394,0.6485,0.7636,0.2667,0.3879,0.5766,0.7636,0.8,0.4464,0.9091,0.6606,0.2242,0.4788,0.497,0.2589,0.2667,0.5636,0.8659,0.5636,0.6606,0.5061,0.2946,0.3636,0.6485,0.372,0.5212,0.6116,0.5879,0.7758,0.5697,0.8303,0.7054,0.6522,0.4109,0.7636,0.6848,0.4922,0.5818,0.7455,0.7818,0.64,0.7636,0.8217,0.4643,0.5758,0.4485,0.7879,0.4643,0.6667,0.7091,0.9286,0.5333,0.5152,0.3152,0.503,0.5793,0.7515,0.559,0.5854,0.2424,0.963,0.5697,0.703,0.5352,0.7758,0.7091,0.7697,0.9515,0.4727,0.6848,0.8364,0.8303,0.497,0.4812,0.3879,0.4909,0.5212,0.4785,0.2545,0.7818,0.8848,0.8909,0.5515,0.4182,0.6585,0.4485,0.6646,0.503,0.5758,0.5152,0.8217,0.6424,0.3802,0.6182,0.3879,0.6182,0.3798,0.25,0.6719,0.6,0.497,0.6667,0.5212,0.4634,0.8837,0.3273,0.1818,0.8482,0.6,0.8303,0.6518,0.2606,0.8304,0.4303,0.6161,0.9273,0.7857,0.8214,0.5366,0.8545,0.6182,0.5091,0.1455,0.6788,0.5333,0.903,0.7212,0.3333,0.7939,0.8727,0.5399,0.9515,0.5177,0.4182,0.6202,0.897,0.4727,0.7939,0.4815,0.7091,0.7442,0.6822,0.7879,0.6667,0.7674,0.697,0.7829,0.7697,0.1389,0.8121,0.2848,0.8667,0.3393,0.3659,0.1515,0.2868,0.8424,0.1455,0.8667,0.9302,0.8545,0.4321,0.4186,0.8121,0.4636,0.7439,0.4321,0.7907,0.8605,0.6182,0.6848,0.303,0.9333,0.354,0.8372,0.3929,0.7012,0.1939,0.8,0.3091,0.6282,0.297,0.9147,0.897,0.897,0.4485,0.6357,0.3929,0.1789,0.3636,0.903,0.1939,0.1923,0.4788,0.6607,0.3661,0.4606,0.8,0.8788,0.2303,0.3333,0.7946,0.1576,0.8682,0.1515,0.2636,0.3515,0.9225,0.4375,0.4643,0.8303,0.5818,0.4732,0.2,0.1875,0.8545,0.8915,0.8482,0.4643,0.6875,0.7143,0.675,0.4788,0.125,0.4021,0.0268,0.0268,0.3125,0.1333,0.3455,0.1783,0.6161,0.8,0.2,0.4182,0.8837,0.2438,0.2727,0.3354,0.625,0.7091,0.625,0.5697,0.3333,0.7333,0.9273,0.4727,0.9697,0.4483,0.7636,0.3455,0.097,0.5879,0.2256,0.7152,0.3697,0.6121,0.1333,0.1333,0.1333,0.4606,0.2364,0.1394,1,0.5818,0.3394,0.5697,0.1152,0.1939,0.0909,0.0606,0.8462,0.5818,0.5697,0.1515,0.1333,0.3758,0.6357,0.0982,0.3393,0.7576,0.7273,0.4121,0.5394,0.6667,0.4186,0.5697,0.3697,0.1939,0.0703,0.697,0.4121,0.7212,0.3758,0.697,0.7636,0.0893,0.6424,1,0.4182,0.5194,0.1576,0.1939,0.6242,0.1394,0.2303,0.9152,0.6512,0.8295,0.8,0.9879,0.6848,1,0.9612,0.9612,0.9259,0.2679,0.9259,0.0727,0.9515,0.5879,0.0545,0.9634,0.0242,0.9939,0.0061],[1,0.992,0.9596,0.9417,0.9299,0.92,0.8457,0.8428,0.8397,0.8279,0.8265,0.8204,0.8174,0.8134,0.8128,0.809,0.8025,0.8018,0.7971,0.7958,0.7936,0.7935,0.7913,0.7899,0.7893,0.789,0.7847,0.7843,0.7814,0.78,0.7783,0.7777,0.7774,0.7773,0.7773,0.7763,0.776,0.7749,0.7746,0.7724,0.7716,0.7713,0.7706,0.7699,0.7689,0.7677,0.7674,0.7669,0.7651,0.764,0.7637,0.7633,0.7627,0.7627,0.7622,0.762,0.7614,0.7594,0.7594,0.759,0.7589,0.7586,0.7581,0.758,0.7574,0.7544,0.7541,0.7535,0.7535,0.7525,0.7518,0.7506,0.7505,0.7435,0.7422,0.7396,0.7391,0.737,0.7309,0.7309,0.7309,0.7261,0.722,0.721,0.7205,0.7192,0.7179,0.7178,0.7175,0.7156,0.7148,0.7111,0.7092,0.7014,0.7002,0.6984,0.6968,0.6925,0.6908,0.6899,0.6854,0.6843,0.6827,0.6826,0.6826,0.6766,0.6754,0.6728,0.6679,0.6664,0.6662,0.6658,0.6645,0.6634,0.6603,0.6596,0.6557,0.6546,0.6513,0.6508,0.6453,0.6452,0.6445,0.6414,0.6414,0.6308,0.6295,0.6291,0.6239,0.6239,0.6238,0.6229,0.6226,0.62,0.616,0.6159,0.6159,0.6159,0.6152,0.6152,0.6145,0.6144,0.6133,0.612,0.6099,0.6094,0.6091,0.6083,0.608,0.6068,0.6059,0.6047,0.6029,0.6026,0.5988,0.5977,0.5967,0.5963,0.5962,0.5954,0.594,0.5928,0.5928,0.5927,0.5927,0.592,0.5918,0.5917,0.5912,0.5895,0.5893,0.5888,0.5885,0.5878,0.5874,0.5871,0.5871,0.5868,0.5868,0.5863,0.5857,0.585,0.584,0.5832,0.5823,0.582,0.5818,0.5811,0.581,0.5809,0.5806,0.5803,0.5795,0.5795,0.5793,0.5792,0.5786,0.5775,0.5761,0.5753,0.575,0.5748,0.5747,0.574,0.574,0.5738,0.5732,0.573,0.573,0.573,0.5727,0.5727,0.5725,0.5723,0.572,0.5714,0.5712,0.5708,0.5707,0.5707,0.5706,0.5703,0.5698,0.5694,0.5694,0.5693,0.5693,0.5689,0.5688,0.5681,0.5668,0.5667,0.5666,0.5659,0.5644,0.5643,0.5635,0.5632,0.5627,0.5626,0.5618,0.5616,0.5616,0.5614,0.5613,0.5612,0.5607,0.5604,0.5595,0.5594,0.5588,0.5586,0.5586,0.5575,0.5572,0.5572,0.5556,0.5555,0.5553,0.5553,0.5551,0.555,0.5549,0.5548,0.5548,0.5547,0.5537,0.5537,0.5536,0.5531,0.553,0.5522,0.5522,0.5518,0.5517,0.5516,0.551,0.5509,0.5508,0.5507,0.5506,0.55,0.55,0.55,0.5491,0.5491,0.5491,0.549,0.5488,0.5483,0.5481,0.5475,0.5473,0.5473,0.5468,0.5468,0.5467,0.5464,0.5463,0.5462,0.5457,0.5453,0.5452,0.5446,0.5446,0.5441,0.5435,0.5429,0.5428,0.5426,0.5424,0.5421,0.542,0.5419,0.5417,0.5416,0.5412,0.5404,0.5399,0.5395,0.5387,0.5387,0.5386,0.5384,0.5379,0.5376,0.5373,0.5372,0.5372,0.5371,0.5369,0.5368,0.5367,0.5367,0.5366,0.5358,0.5357,0.5355,0.5345,0.5342,0.5335,0.5331,0.533,0.5329,0.5327,0.5326,0.532,0.532,0.5315,0.5313,0.5313,0.531,0.5309,0.5309,0.5309,0.5306,0.5306,0.5303,0.5301,0.5299,0.528,0.528,0.5279,0.5277,0.5276,0.5274,0.5274,0.5273,0.5269,0.5269,0.5268,0.5267,0.5265,0.5265,0.5265,0.5265,0.5265,0.526,0.526,0.5259,0.5259,0.5258,0.5255,0.5255,0.5255,0.5255,0.5253,0.5252,0.5249,0.5248,0.5247,0.5247,0.5247,0.5246,0.5246,0.5245,0.5241,0.5241,0.5236,0.5231,0.5227,0.5226,0.5224,0.5223,0.5223,0.522,0.5219,0.5219,0.5219,0.5218,0.5218,0.5217,0.5215,0.5213,0.5211,0.5209,0.5207,0.5204,0.5203,0.5202,0.5201,0.5201,0.52,0.5199,0.5198,0.5197,0.5197,0.5193,0.5191,0.519,0.5188,0.5181,0.5177,0.5169,0.5161,0.5152,0.515,0.5143,0.514,0.5136,0.5134,0.5134,0.5131,0.5129,0.5118,0.5117,0.5114,0.5106,0.5104,0.5102,0.5101,0.5101,0.5093,0.5091,0.5091,0.5082,0.508,0.5079,0.5072,0.507,0.5063,0.5062,0.5062,0.5061,0.5059,0.5058,0.5049,0.5044,0.5042,0.5035,0.5034,0.503,0.5028,0.5028,0.5028,0.5023,0.5012,0.5001,0.5,0.4986,0.4986,0.4985,0.4981,0.498,0.4978,0.4977,0.4976,0.4967,0.4948,0.4943,0.4939,0.4936,0.4935,0.4933,0.4933,0.493,0.4928,0.4912,0.4906,0.4897,0.4897,0.4896,0.4895,0.4877,0.4865,0.4864,0.4861,0.4854,0.4852,0.4848,0.4847,0.4846,0.4833,0.4832,0.4828,0.4826,0.4823,0.48,0.4798,0.4778,0.4778,0.4777,0.4776,0.4768,0.4754,0.4743,0.4742,0.4733,0.4727,0.4724,0.4688,0.468,0.4672,0.4651,0.4645,0.4637,0.4621,0.4574,0.452,0.4408,0.4274]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>var<\/th>\n      <th>direction<\/th>\n      <th>optimal_cutpoint<\/th>\n      <th>sum_sens_spec<\/th>\n      <th>acc<\/th>\n      <th>sensitivity<\/th>\n      <th>specificity<\/th>\n      <th>AUC<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"fixedHeader":true,"dom":"Blfrtip","initComplete":"function(settings, json) {\n$(this.api().table().header()).css({'font-size': '12px'});\n}","scrollX":true,"columnDefs":[{"width":"10px","targets":[2,3,4,5,6,7,8]},{"className":"dt-right","targets":[3,4,5,6,7,8]},{"orderable":false,"targets":0}],"order":[[4,"desc"]],"lengthMenu":[[10,25,50,-1],["10","25","50","All"]],"autoWidth":false,"orderClasses":false}},"evals":["options.initComplete"],"jsHooks":[]}</script>
+
+</div>
+<!-- </div> -->
+<!-- table string rm (string_rm.js) -->
+<script>
+  let tables = document.getElementsByTagName("table");
+for (let i = 0; i < tables.length; i++) {
+    let table = tables[i];
+    table.innerHTML = table.innerHTML.replace(/\(#tab:input rscript\)/g, "");
+    table.innerHTML = table.innerHTML.replace(/\(#tab:input plot rscript_global\)/g, "");
+    table.innerHTML = table.innerHTML.replace(/\(#tab:input plot rscript_test\)/g, "");
+    table.innerHTML = table.innerHTML.replace(/\(#tab:input plot rscript_sua\)/g, "");
+    table.innerHTML = table.innerHTML.replace(/\(#tab:input plot rscript_girc\)/g, "");
+    table.innerHTML = table.innerHTML.replace(/\(#tab:input plot rscript_flc\)/g, "");
+}
+</script>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="predict_cutoff_roc.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="publication1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

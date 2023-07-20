@@ -4,6 +4,7 @@ tmp_03 <- googlesheets4::read_sheet(ss = 'https://docs.google.com/spreadsheets/d
 
 #exclude program name w/ "診所"
 tmp_03 <- tmp_03 %>% filter(`program 名稱` %in% c(tmp_03$`program 名稱` %>% grep("診所", ., value = TRUE, invert = TRUE)))
+#yy: tmp_03 <- tmp_03 %>% filter(!grepl("診所", `program 名稱`))
 
 #exclude 體重% is NA
 tmp_03 <- tmp_03 %>% lin_exclude_NA_col("體重 %")
